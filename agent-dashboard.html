@@ -1,0 +1,200 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0d2528">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="description" content="Your Stackly Agent dashboard. Manage clients, policies, claims, leads, commissions, and appointments in one workspace.">
+  <title>Agent Dashboard | Stackly Insurance</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/dashboard.css">
+</head>
+<body class="dash-page dash-agent">
+  <a class="skip-link" href="#agent-main">Skip to content</a>
+
+  <div class="dash-app" data-agent-app data-theme="light">
+    <!-- ============================ Sidebar ============================ -->
+    <aside class="dash-sidebar" data-dash-sidebar aria-label="Agent dashboard navigation">
+      <div class="dash-sidebar-head">
+        <a class="dash-brand" href="index.html" aria-label="Stackly Insurance Services home">
+          <img src="assets/logo/logo-stackly.webp" alt="Stackly Insurance Services" width="132" height="38">
+        </a>
+        <button class="dash-sidebar-close" type="button" data-sidebar-close aria-label="Close navigation">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m6 6 12 12M18 6 6 18"/></svg>
+        </button>
+      </div>
+
+      <div class="dash-workspace">
+        <span class="dash-workspace-icon" data-user-initials aria-hidden="true">A</span>
+        <span>
+          <strong>Agent workspace</strong>
+          <small>Stackly partner</small>
+        </span>
+      </div>
+
+      <nav class="dash-nav" aria-label="Primary dashboard navigation">
+        <p class="dash-nav-group">Workspace</p>
+        <a class="dash-nav-link" href="#/overview" data-route="overview">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 4h7v7H4zM13 4h7v7h-7zM4 13h7v7H4zM13 13h7v7h-7z"/></svg>
+          <span class="dash-nav-label">Overview</span>
+        </a>
+        <a class="dash-nav-link" href="#/customers" data-route="customers">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="9" r="3.2"/><path d="M5.5 20a6.5 6.5 0 0 1 13 0"/></svg>
+          <span class="dash-nav-label">Customers</span>
+        </a>
+        <a class="dash-nav-link" href="#/policies" data-route="policies">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m12 3 7 3v5c0 4.7-3 8-7 10-4-2-7-5.3-7-10V6l7-3Z"/><path d="m9 12 2 2 4-4"/></svg>
+          <span class="dash-nav-label">Policies</span>
+        </a>
+        <a class="dash-nav-link" href="#/claims" data-route="claims">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 4h6v3H9zM7 5H6a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-1"/><path d="m9 13 2 2 4-4"/></svg>
+          <span class="dash-nav-label">Claims Queue</span>
+          <span class="dash-nav-badge" data-nav-badge hidden>0</span>
+        </a>
+        <a class="dash-nav-link" href="#/leads" data-route="leads">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 16l5-5 3 3 7-8"/><path d="M15 6h4v4"/></svg>
+          <span class="dash-nav-label">Leads &amp; Pipeline</span>
+        </a>
+        <a class="dash-nav-link" href="#/commissions" data-route="commissions">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3v18M8 7h6a3 3 0 0 1 0 6H8m0 0h6a3 3 0 0 1 0 6H8"/></svg>
+          <span class="dash-nav-label">Commissions</span>
+        </a>
+
+        <p class="dash-nav-group">Engagement</p>
+        <a class="dash-nav-link" href="#/appointments" data-route="appointments">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="8.5"/><path d="M12 7v5l3.5 2"/></svg>
+          <span class="dash-nav-label">Appointments</span>
+        </a>
+        <a class="dash-nav-link" href="#/messages" data-route="messages">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 15a2 2 0 0 1-2 2H8l-4 3V6a2 2 0 0 1 2-2h11a2 2 0 0 1 2 2z"/></svg>
+          <span class="dash-nav-label">Messages</span>
+        </a>
+        <a class="dash-nav-link" href="#/reports" data-route="reports">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M7 3h7l5 5v13H7z"/><path d="M14 3v5h5"/></svg>
+          <span class="dash-nav-label">Reports</span>
+        </a>
+
+        <p class="dash-nav-group">Account</p>
+        <a class="dash-nav-link" href="#/profile" data-route="profile">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="9" r="3.2"/><path d="M5.5 20a6.5 6.5 0 0 1 13 0"/></svg>
+          <span class="dash-nav-label">Profile</span>
+        </a>
+        <a class="dash-nav-link" href="#/settings" data-route="settings">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="3"/><path d="M12 3v2.2M12 18.8V21M4.2 7.5l1.9 1.1M17.9 15.4l1.9 1.1M4.2 16.5l1.9-1.1M17.9 8.6l1.9-1.1"/></svg>
+          <span class="dash-nav-label">Settings</span>
+        </a>
+      </nav>
+
+      <div class="dash-sidebar-foot">
+        <div class="dash-sidebar-user">
+          <span class="dash-avatar dash-avatar--sm" data-user-avatar-wrap aria-hidden="true">A</span>
+          <span class="dash-user-meta">
+            <strong data-user-name>Stackly Agent</strong>
+            <small data-user-role>Agent</small>
+          </span>
+          <button class="dash-icon-btn" type="button" data-logout aria-label="Sign out">
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M15 4h3a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2h-3"/><path d="M10 12H4M7 8l-3 4 3 4"/></svg>
+          </button>
+        </div>
+      </div>
+    </aside>
+    <div class="dash-backdrop" data-sidebar-backdrop hidden></div>
+
+    <!-- ============================ Main ============================ -->
+    <div class="dash-main">
+      <header class="dash-topbar">
+        <button class="dash-toggle-btn dash-menu-toggle" type="button" data-sidebar-toggle aria-label="Toggle navigation">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        </button>
+        <a class="dash-topbar-brand" href="index.html" aria-label="Stackly home">
+          <img src="assets/logo/logo-stackly.webp" alt="Stackly Insurance Services" width="116" height="34">
+        </a>
+
+        <form class="dash-search" role="search" data-global-search>
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="11" cy="11" r="7"/><path d="m16.5 16.5 4 4"/></svg>
+          <label class="sr-only" for="agent-search-input">Search your workspace</label>
+          <input id="agent-search-input" type="search" placeholder="Search clients, policies, claims&hellip;" autocomplete="off">
+        </form>
+
+        <div class="dash-topbar-actions">
+          <button class="dash-icon-btn" type="button" data-theme-toggle aria-label="Toggle theme">
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5Z"/></svg>
+          </button>
+
+          <div class="dash-dropdown">
+            <button class="dash-icon-btn dash-bell" type="button" data-notif-toggle aria-expanded="false" aria-controls="agent-notifications" aria-label="Notifications">
+              <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 9a6 6 0 0 1 12 0c0 5 2 6 2 6H4s2-1 2-6Z"/><path d="M10.5 19a2 2 0 0 0 3 0"/></svg>
+              <span class="dash-bell-dot" data-notif-dot hidden>0</span>
+            </button>
+            <div class="dash-panel" id="agent-notifications" data-notif-panel hidden></div>
+          </div>
+
+          <div class="dash-dropdown">
+            <button class="dash-user-btn" type="button" data-user-toggle aria-expanded="false" aria-controls="agent-user-menu">
+              <span class="dash-avatar dash-avatar--sm" data-user-avatar-wrap aria-hidden="true">A</span>
+              <span class="dash-user-btn-meta">
+                <strong data-user-name>Stackly Agent</strong>
+                <small data-user-role>Agent</small>
+              </span>
+              <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6"/></svg>
+            </button>
+            <div class="dash-panel dash-user-panel" id="agent-user-menu" data-user-panel hidden>
+              <div class="dash-user-panel-head">
+                <strong data-user-name>Stackly Agent</strong>
+                <span data-user-email>agent@stacklyinsurance.com</span>
+                <div class="role-badge role-badge--agent" style="margin-top:8px;">Agent</div>
+                <small data-user-agency style="display:block;margin-top:6px;color:var(--dash-muted);font-size:12px;">AGT-0000</small>
+              </div>
+              <nav aria-label="Account menu">
+                <a href="#/profile" data-route="profile">
+                  <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="9" r="3.2"/><path d="M5.5 20a6.5 6.5 0 0 1 13 0"/></svg> My profile
+                </a>
+                <a href="#/settings" data-route="settings">
+                  <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="3"/><path d="M12 3v2.2M12 18.8V21M4.2 7.5l1.9 1.1M17.9 15.4l1.9 1.1M4.2 16.5l1.9-1.1M17.9 8.6l1.9-1.1"/></svg> Settings
+                </a>
+                <button class="is-danger" type="button" data-logout>
+                  <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M15 4h3a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2h-3"/><path d="M10 12H4M7 8l-3 4 3 4"/></svg> Sign out
+                </button>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="dash-content" id="agent-main" tabindex="-1">
+        <div class="dash-view" data-agent-view aria-busy="false"></div>
+        <p class="sr-only" data-route-announcer role="status" aria-live="polite"></p>
+      </main>
+
+      <footer class="dash-footer">
+        <p>&copy; 2026 Stackly Insurance Services &middot; Agent workspace</p>
+        <div>
+          <a href="index.html#contact">Compliance</a> &nbsp; <a href="404.html">Privacy</a> &nbsp; <a href="404.html">Terms</a>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+  <div data-drawer-root></div>
+  <div class="dash-toast" data-toast role="status" aria-live="polite" hidden></div>
+
+  <noscript>
+    <div class="dash-guard">
+      <div class="dash-guard-card">
+        <h1>JavaScript is required</h1>
+        <p>Please enable JavaScript to load your Stackly Agent workspace.</p>
+        <a class="button button--dark" href="login.html">Go to login</a>
+      </div>
+    </div>
+  </noscript>
+
+  <script src="assets/js/main.js" defer></script>
+  <script src="assets/js/store.js" defer></script>
+  <script src="assets/js/dashboard.js" defer></script>
+  <script src="assets/js/agent.js" defer></script>
+</body>
+</html>

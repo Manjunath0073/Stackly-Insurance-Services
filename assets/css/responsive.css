@@ -1,0 +1,296 @@
+/* ==========================================================================
+   Stackly shared page refinements
+   1) One display-type scale across every page (matches the homepage).
+   2) Small-screen passes (<=360px / <=320px) so every page behaves the same
+      down to 320px with no cropping or sideways scroll.
+   Loaded after each page stylesheet. Scoped with body[class] so the rules
+   only touch the inner pages (the homepage has no body class) and override
+   the single-class page rules loaded before this file. Uses tokens from
+   style.css.
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1) Shared display typography — identical h1/h2 scale on every page
+   -------------------------------------------------------------------------- */
+body[class] main h1 {
+  font-size: clamp(3.25rem, 5.7vw, 6rem);
+  line-height: 0.98;
+}
+
+body[class] main h2 {
+  font-size: clamp(2.65rem, 4.3vw, 4.45rem);
+  line-height: 1.02;
+}
+
+@media (max-width: 680px) {
+  body[class] main h1 {
+    font-size: clamp(3.2rem, 14.5vw, 5.4rem);
+  }
+
+  body[class] main h2 {
+    font-size: clamp(2.35rem, 11vw, 3.55rem);
+  }
+}
+
+@media (max-width: 390px) {
+  body[class] main h1 {
+    font-size: 3.15rem;
+  }
+}
+
+@media (max-width: 360px) {
+  body[class] main h1 {
+    font-size: 2.85rem;
+  }
+
+  body[class] main h2 {
+    font-size: clamp(2.05rem, 10.5vw, 3rem);
+  }
+}
+
+@media (max-width: 320px) {
+  body[class] main h1 {
+    font-size: 2.55rem;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   2) Page-specific small-screen refinements
+   -------------------------------------------------------------------------- */
+
+/* About */
+@media (max-width: 360px) {
+  .about-page .about-hero-section,
+  .about-page .about-story-section,
+  .about-page .about-pillars-section,
+  .about-page .about-team-section,
+  .about-page .about-numbers-section,
+  .about-page .about-culture-section,
+  .about-page .about-community-section {
+    padding: 64px 0;
+  }
+  .about-page .about-hero-collage { min-height: 350px; }
+  .about-page .about-hero-photo--main { height: 320px; border-radius: 95px 16px 16px 16px; }
+  .about-page .about-hero-float--top { right: -2px; }
+  .about-page .about-hero-float--bottom { right: -2px; }
+  .about-page .about-story-image { height: 350px; }
+  .about-page .about-pillar-image { height: 190px; }
+  .about-page .about-pillar-copy { padding: 22px 20px 24px; }
+  .about-page .about-pillar-copy h3 { font-size: 22px; }
+  .about-page .about-team-banner { height: 260px; }
+  .about-page .about-number-card { min-height: 152px; padding: 16px; }
+  .about-page .about-number-value { font-size: 2.5rem; }
+  .about-page .about-gallery-grid { grid-auto-rows: 148px; }
+  .about-page .about-community-images figure { height: 232px; }
+  .about-page .about-closing-cta { padding: 30px 20px 32px; border-radius: 18px 18px 80px 18px; }
+  .about-page .about-closing-cta h2 { font-size: 2.3rem; }
+}
+
+@media (max-width: 320px) {
+  .about-page .about-hero-section,
+  .about-page .about-story-section,
+  .about-page .about-pillars-section,
+  .about-page .about-team-section,
+  .about-page .about-numbers-section,
+  .about-page .about-culture-section,
+  .about-page .about-community-section {
+    padding: 56px 0;
+  }
+  .about-page .about-hero-photo--main { height: 290px; }
+  .about-page .about-story-image { height: 318px; }
+  .about-page .about-number-value { font-size: 2.25rem; }
+  .about-page .about-closing-cta h2 { font-size: 2.05rem; }
+}
+
+/* --------------------------------------------------------------------------
+   Products
+   -------------------------------------------------------------------------- */
+@media (max-width: 360px) {
+  .products-page .products-hero-section,
+  .products-page .products-categories-section,
+  .products-page .products-spotlight-section,
+  .products-page .products-matrix-section,
+  .products-page .products-builder-section,
+  .products-page .products-proof-section,
+  .products-page .products-final-section {
+    padding: 64px 0;
+  }
+  .products-page .products-hero-collage { min-height: 350px; }
+  .products-page .products-hero-image--main { height: 320px; border-radius: 95px 16px 16px 16px; }
+  .products-page .products-hero-float--top,
+  .products-page .products-hero-float--bottom { right: -2px; }
+  .products-page .products-category-card { min-height: 300px; }
+  .products-page .products-category-image { height: 168px; }
+  .products-page .products-spotlight-media { min-height: 350px; }
+  .products-page .products-spotlight-main { height: 330px; }
+  .products-page .products-price-card { padding: 22px 18px; }
+  .products-page .products-plan-strip { gap: 10px; }
+}
+
+@media (max-width: 320px) {
+  .products-page .products-hero-section,
+  .products-page .products-categories-section,
+  .products-page .products-spotlight-section,
+  .products-page .products-matrix-section,
+  .products-page .products-builder-section,
+  .products-page .products-proof-section,
+  .products-page .products-final-section {
+    padding: 54px 0;
+  }
+  .products-page .products-hero-image--main { height: 290px; }
+  .products-page .products-spotlight-main { height: 300px; }
+  .products-page .products-price-card { padding: 20px 16px; }
+}
+
+/* --------------------------------------------------------------------------
+   Claims
+   -------------------------------------------------------------------------- */
+@media (max-width: 360px) {
+  .claims-page .claims-hero-section,
+  .claims-page .claims-process-section,
+  .claims-page .claims-speed-section,
+  .claims-page .claims-types-section,
+  .claims-page .claims-tracker-section,
+  .claims-page .claims-stories-section,
+  .claims-page .claims-final-section {
+    padding: 64px 0;
+  }
+  .claims-page .claims-hero-stage { min-height: 420px; }
+  .claims-page .claims-hero-photo { height: 320px; border-radius: 18px 90px 18px 18px; }
+  .claims-page .claims-status-card { width: 212px; }
+  .claims-page .claims-process-image { height: 165px; }
+  .claims-page .claims-type-card { min-height: 280px; }
+  .claims-page .claims-tracker-image { height: 320px; }
+  .claims-page .claims-story-slide { min-height: 400px; padding: 26px 20px 24px; }
+  .claims-page .claims-final-cta { min-height: 0; }
+  .claims-page .claims-final-cta-content { padding: 30px 20px; }
+  .claims-page .claims-final-cta-content h2 { font-size: 2.35rem; }
+}
+
+@media (max-width: 320px) {
+  .claims-page .claims-hero-section,
+  .claims-page .claims-process-section,
+  .claims-page .claims-speed-section,
+  .claims-page .claims-types-section,
+  .claims-page .claims-tracker-section,
+  .claims-page .claims-stories-section,
+  .claims-page .claims-final-section {
+    padding: 54px 0;
+  }
+  .claims-page .claims-hero-photo { height: 288px; }
+  .claims-page .claims-tracker-image { height: 288px; }
+  .claims-page .claims-final-cta-content h2 { font-size: 2.1rem; }
+}
+
+/* --------------------------------------------------------------------------
+   Resources
+   -------------------------------------------------------------------------- */
+@media (max-width: 360px) {
+  .resources-page .resources-hero-section,
+  .resources-page .resources-featured-section,
+  .resources-page .resources-categories-section,
+  .resources-page .resources-latest-section,
+  .resources-page .resources-guides-section,
+  .resources-page .resources-video-section,
+  .resources-page .resources-final-section {
+    padding: 64px 0;
+  }
+  .resources-page .resources-hero-mosaic { min-height: 340px; }
+  .resources-page .resources-hero-feature { height: 270px; }
+  .resources-page .resources-category-card { min-height: 198px; }
+  .resources-page .resources-final-images figure { height: 230px; }
+  .resources-page .resources-closing-band { padding: 38px 16px; }
+  .resources-page .resources-closing-band h2 { font-size: 2.3rem; }
+}
+
+@media (max-width: 320px) {
+  .resources-page .resources-hero-section,
+  .resources-page .resources-featured-section,
+  .resources-page .resources-categories-section,
+  .resources-page .resources-latest-section,
+  .resources-page .resources-guides-section,
+  .resources-page .resources-video-section,
+  .resources-page .resources-final-section {
+    padding: 54px 0;
+  }
+  .resources-page .resources-hero-feature { height: 245px; }
+  .resources-page .resources-category-card { min-height: 184px; }
+  .resources-page .resources-closing-band h2 { font-size: 2.05rem; }
+}
+
+/* --------------------------------------------------------------------------
+   Contact
+   -------------------------------------------------------------------------- */
+@media (max-width: 360px) {
+  .contact-page .contact-hero-section,
+  .contact-page .contact-methods-section,
+  .contact-page .contact-office-section,
+  .contact-page .contact-final-section {
+    padding: 64px 0;
+  }
+  .contact-page .contact-hero-visual { min-height: 370px; }
+  .contact-page .contact-hero-photo { height: 300px; border-radius: 18px 90px 18px 18px; }
+  .contact-page .contact-method-grid { grid-template-columns: 1fr; }
+  .contact-page .contact-method-card { min-height: 160px; }
+  .contact-page .contact-form-card { padding: 20px 16px; }
+  .contact-page .contact-map-placeholder { height: 320px; border-radius: 18px 90px 18px 18px; }
+  .contact-page .contact-final-cta { min-height: 0; }
+  .contact-page .contact-final-cta-content { padding: 30px 20px; }
+  .contact-page .contact-final-cta-content h2 { font-size: 2.35rem; }
+}
+
+@media (max-width: 320px) {
+  .contact-page .contact-hero-section,
+  .contact-page .contact-methods-section,
+  .contact-page .contact-office-section,
+  .contact-page .contact-final-section {
+    padding: 54px 0;
+  }
+  .contact-page .contact-hero-photo { height: 274px; }
+  .contact-page .contact-map-placeholder { height: 290px; }
+  .contact-page .contact-final-cta-content h2 { font-size: 2.1rem; }
+}
+
+/* --------------------------------------------------------------------------
+   404
+   -------------------------------------------------------------------------- */
+@media (max-width: 360px) {
+  .notfound-page .nf-hero-section { padding: 56px 0 74px; }
+  .notfound-page .nf-code { font-size: clamp(3.6rem, 22vw, 5.6rem); }
+  .notfound-page .nf-hero-visual { min-height: 400px; }
+  .notfound-page .nf-hero-photo { width: calc(100% - 6px); height: 330px; border-radius: 18px 90px 18px 18px; }
+  .notfound-page .nf-hero-detail { width: 128px; height: 110px; }
+  .notfound-page .nf-hero-card { left: -2px; }
+  .notfound-page .nf-recovery-section { padding: 76px 0 84px; }
+  .notfound-page .nf-recovery-panel { padding: 18px; }
+}
+
+@media (max-width: 320px) {
+  .notfound-page .nf-code { font-size: 3.4rem; }
+  .notfound-page .nf-hero-photo { height: 296px; }
+  .notfound-page .nf-hero-visual { min-height: 360px; }
+  .notfound-page .nf-recovery-panel { padding: 16px; }
+}
+
+/* --------------------------------------------------------------------------
+   Auth (login / signup)
+   -------------------------------------------------------------------------- */
+@media (max-width: 360px) {
+  .auth-page .auth-main { padding: 12px 8px 30px; }
+  .auth-page .auth-brand-panel { min-height: 320px; padding: 24px 20px; }
+  .auth-page .auth-brand-copy h1 { font-size: 2.4rem; }
+  .auth-page .auth-form-panel,
+  .auth-page .auth-signup-form-panel { padding: 28px 16px 34px; }
+  .auth-page .auth-form-heading h2 { font-size: 2.2rem; }
+  .auth-page .auth-signup-step > legend { font-size: 20px; }
+  .auth-page .auth-trust-card { padding: 11px 12px; }
+  .auth-page .auth-trust-card img { width: 54px; height: 54px; }
+  .auth-page .auth-footer { padding: 16px; }
+}
+
+@media (max-width: 320px) {
+  .auth-page .auth-brand-copy h1 { font-size: 2.15rem; }
+  .auth-page .auth-form-heading h2 { font-size: 2rem; }
+  .auth-page .auth-role-option { min-height: 54px; }
+  .auth-page .auth-main { padding: 8px 6px 24px; }
+}
