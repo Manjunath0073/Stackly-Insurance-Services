@@ -917,6 +917,12 @@
 }
 
 @media (max-width: 400px) {
+  /* De-clutter the topbar on very small screens: the brand logo is redundant
+     (the sidebar drawer carries it), so hiding it + tightening the gaps lets
+     the menu, theme toggle, notifications and avatar breathe at 320px. */
+  .dash-topbar { gap: 8px; padding: 10px 12px; }
+  .dash-topbar .dash-topbar-brand { display: none; }
+  .dash-topbar-actions { gap: 6px; }
   .doc-ico { width: 40px; height: 40px; font-size: 10px; }
   .doc-body strong { font-size: 13px; }
   .doc-body small { font-size: 10px; }

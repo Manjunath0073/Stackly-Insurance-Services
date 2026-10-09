@@ -148,12 +148,4 @@
       }, 650);
     }, 850);
   });
-
-  var forgot = document.querySelector("[data-forgot-password]");
-  if (forgot) {
-    forgot.addEventListener("click", function (event) {
-      event.preventDefault();
-      showToast("Password reset instructions would be sent here.", false);
-    });
-  }
 })();

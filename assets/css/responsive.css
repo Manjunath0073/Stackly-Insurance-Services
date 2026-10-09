@@ -157,7 +157,7 @@ body[class] main h2 {
   }
   .claims-page .claims-hero-stage { min-height: 420px; }
   .claims-page .claims-hero-photo { height: 320px; border-radius: 18px 90px 18px 18px; }
-  .claims-page .claims-status-card { width: 212px; }
+  .claims-page .claims-status-card { width: 100%; }
   .claims-page .claims-process-image { height: 165px; }
   .claims-page .claims-type-card { min-height: 280px; }
   .claims-page .claims-tracker-image { height: 320px; }

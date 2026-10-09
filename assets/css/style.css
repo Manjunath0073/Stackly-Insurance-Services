@@ -628,9 +628,17 @@ h1 em {
 }
 
 /* When the menu is open the header chrome melts into the dark panel so the
-   logo and the X read as part of the overlay. */
+   logo and the X read as part of the overlay. Keeping it `position: fixed`
+   also pins the logo + close toggle to the top of the viewport so they stay
+   visible even when the page was scrolled before the menu opened
+   (`body.menu-open` makes <body> the scroll container, which would otherwise
+   shift a `position: sticky` header out of view by the scroll offset). */
 body.menu-open .site-header,
 body.menu-open .site-header.is-scrolled {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
   background: transparent;
   box-shadow: none;
   -webkit-backdrop-filter: none;

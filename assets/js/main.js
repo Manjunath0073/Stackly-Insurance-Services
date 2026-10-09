@@ -8,16 +8,39 @@
 
   root.classList.add("js-ready");
 
-  /* Sticky header state */
+  /* Sticky header state — rAF-throttled with a hysteresis band. A plain
+     `scrollY > 18` toggle lets elastic overscroll near the top flip
+     `is-scrolled` (and with it the announcement bar + header height) on and
+     off every frame, which shifts the layout. The band stops that flapping:
+     the class is only added past 24px and only removed once back above 6px. */
   var header = doc.querySelector("[data-header]");
+  var headerTick = false;
+  var headerOn = false;
   var updateHeader = function () {
-    if (header) {
-      header.classList.toggle("is-scrolled", window.scrollY > 18);
+    headerTick = false;
+    if (!header) {
+      return;
+    }
+    var y = window.scrollY;
+    if (headerOn) {
+      if (y < 6) {
+        headerOn = false;
+        header.classList.remove("is-scrolled");
+      }
+    } else if (y > 24) {
+      headerOn = true;
+      header.classList.add("is-scrolled");
+    }
+  };
+  var queueHeaderUpdate = function () {
+    if (!headerTick) {
+      headerTick = true;
+      window.requestAnimationFrame(updateHeader);
     }
   };
 
   updateHeader();
-  window.addEventListener("scroll", updateHeader, { passive: true });
+  window.addEventListener("scroll", queueHeaderUpdate, { passive: true });
 
   /* Reading progress */
   var scrollProgress = doc.querySelector("[data-scroll-progress] span");

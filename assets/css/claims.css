@@ -1694,6 +1694,35 @@
     height: 68px;
   }
 
+  /* Small screens: pull the overlay card off the photo and sit it below it,
+     and hide the two small decorative photos so the hero stays uncongested. */
+  .claims-hero-stage {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    gap: 16px;
+    min-height: 0;
+  }
+
+  .claims-hero-photo {
+    position: relative;
+    width: 100%;
+    flex: 0 0 100%;
+    transform: none;
+  }
+
+  .claims-status-card {
+    position: relative;
+    top: auto;
+    left: auto;
+    width: 100%;
+  }
+
+  .claims-hero-family,
+  .claims-hero-device {
+    display: none;
+  }
+
   .claims-process-grid {
     grid-template-columns: 1fr;
   }

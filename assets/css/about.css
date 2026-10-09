@@ -1590,6 +1590,43 @@
     font-size: 14px;
   }
 
+  /* Small screens: pull the floating cards off the image and sit them below
+     it, and drop the two overlay photos so the hero is clean and uncongested. */
+  .about-hero-collage {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    gap: 14px;
+    min-height: 0;
+  }
+
+  .about-hero-photo--main {
+    position: relative;
+    width: 100%;
+    flex: 0 0 100%;
+    border-radius: 26px 26px 26px 100px;
+    transform: none;
+  }
+
+  .about-hero-photo--office,
+  .about-hero-photo--detail {
+    display: none;
+  }
+
+  .about-hero-float {
+    position: relative;
+    flex: 1 1 calc(50% - 7px);
+    padding: 12px 14px;
+  }
+
+  .about-hero-float--top,
+  .about-hero-float--bottom {
+    top: auto;
+    right: auto;
+    bottom: auto;
+    left: auto;
+  }
+
   .about-story-layout {
     gap: 55px;
   }
